@@ -56,14 +56,6 @@ config defaults
     option flow_offloading_hw '1'
 EOF
 
-# ✅ 4. 内存优化：启用 ZRAM（减少 RAM 占用，提高流畅度）
-if [ $(free -m | awk '/Mem:/ {print $2}') -gt 128 ]; then
-    echo "CONFIG_PACKAGE_zram-swap=y" >> .config
-    mkdir -p package/base-files/files/etc/init.d
-    echo '#!/bin/sh' > package/base-files/files/etc/init.d/zram
-    echo '/etc/init.d/zram start' >> package/base-files/files/etc/init.d/zram
-    chmod +x package/base-files/files/etc/init.d/zram
-fi
 
 # ✅ 5. 存储优化：减少 Flash 读写，将日志存到内存（tmpfs）
 mkdir -p package/base-files/files/etc
