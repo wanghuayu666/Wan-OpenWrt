@@ -6,8 +6,8 @@ on:
     - cron: 0 19 * * *  # ⏳ 每天 UTC 时间 19:00 触发定时编译（北京时间 03:00）
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt.git  # 🔗 OpenWrt 源码仓库地址
-  REPO_BRANCH: main  # 📌 OpenWrt 源码使用的分支
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git  # 🔗 OpenWrt 源码仓库地址
+  REPO_BRANCH: "v24.10.0"  # 📌 OpenWrt 源码使用的分支
   CONFIG_FILE: configs/x86_64.config  # ⚙️ OpenWrt 编译配置文件路径
   DIY_SCRIPT: diy-script.sh  # 🛠 OpenWrt 预编译自定义脚本
   CLASH_KERNEL: amd64  # 🌐 Clash 核心架构
